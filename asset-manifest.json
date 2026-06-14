@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/online-store.git/static/css/main.eeaf7e81.css",
+    "main.js": "/online-store.git/static/js/main.3ad0ab40.js",
+    "index.html": "/online-store.git/index.html",
+    "main.eeaf7e81.css.map": "/online-store.git/static/css/main.eeaf7e81.css.map",
+    "main.3ad0ab40.js.map": "/online-store.git/static/js/main.3ad0ab40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eeaf7e81.css",
+    "static/js/main.3ad0ab40.js"
+  ]
+}
