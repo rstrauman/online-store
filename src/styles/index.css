@@ -1,1 +1,36 @@
 @import "./container.css";
+
+/***** Flex *****/ 
+.flex {
+    display: flex;
+}
+
+/***** Header *****/
+header {
+    height: 60px; 
+    width: 100%;
+    background: linear-gradient(90deg, rgb(15, 15, 15), rgb(50, 50, 50), rgb(15, 15, 15 ));
+    color: rgb(255, 255, 255);
+}
+
+button {
+    background-color: rgb(140, 140, 140);
+    color: #000000;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 4px rgba(167, 236, 163, 0.5);
+    width: 100px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: rgb(255, 187, 0);
+    color: #fff;
+}
+
+body {
+        background: linear-gradient(180deg, rgb(15, 15, 15), rgb(50, 50, 50), rgb(15, 15, 15 ));
+
+}
