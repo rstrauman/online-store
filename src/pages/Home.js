@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Gallery from '../components/Gallery';
+import HeroBanner from '../components/HeroBanner'
 
 function Home() {
     const [products, setProducts] = useState([]);
@@ -26,15 +27,16 @@ function Home() {
         product.title.toLowerCase().includes(query.toLowerCase())
     );
     return (
-        <>
-        <input
-                type="text"
-                placeholder="Type item Name"
-                value={query}
-                onChange={event => setQuery(event.target.value)}
-            />
-         <Gallery products={selectproducts} />
-        </>
+        <main>
+            <input
+                    type="text"
+                    placeholder="Type item Name"
+                    value={query}
+                    onChange={event => setQuery(event.target.value)}
+                />
+            <Gallery products={selectproducts} />
+            <HeroBanner/>
+        </main>
     );
 }
 
