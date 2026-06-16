@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
 /***** Flex *****/ 
-.flex, .nav.flex {
+.flex, .nav.flex, .hero-content {
     display: flex;
 }
 
@@ -10,6 +10,10 @@
     height: 100%;
     justify-content: space-between;
     place-items: center;
+}
+
+.hero-content {
+    flex-direction: column;
 }
 
 /***** Header *****/
@@ -83,19 +87,58 @@ a.active {
     color: white;
 }
 
-button {
-    background-color: rgb(140, 140, 140);
-    color: #000000;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    box-shadow: 2px 2px 4px rgba(167, 236, 163, 0.5);
-    width: 100px;
-    height: 40px;
-    font-weight: 500;
+/***** Hero *****/
+
+.hero {
+    background: url(../media/street.jpg) center / cover no-repeat;
+    height: calc(100svh - 60px);
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.66);
+    height: calc(100svh - 60px);
+    width: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    justify-content: center;
+    place-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+input[type=search] {
+    background-color: transparent;
+    padding: 12px 36px;
+    border-radius: 50px;
+    border: 1px solid rgb(140, 140, 140);
+    color: #fff;
     font-size: 18px;
 }
 
-button:hover {
+input[type=search]:focus {
+    border-color: #fff;
+}
+
+.hero-content button {
+    background-color: rgb(140, 140, 140);
+    color: #ffffff;
+    border-radius: 5px;
+    /* border: 1px solid #fff; */
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.25s ease-in-out;
+}
+
+.hero-content button:hover {
     background-color: rgb(255, 187, 0);
     color: #fff;
 }
