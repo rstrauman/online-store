@@ -146,3 +146,222 @@ input[type=search]:focus {
 body {
     background: linear-gradient(180deg, rgb(15, 15, 15), rgb(50, 50, 50), rgb(15, 15, 15 ));
 }
+
+
+
+/***** Cart Page *****/
+.cart-page, .notfound-page, .info-page {
+    min-height: calc(100svh - 60px);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.cart-container, .notfound-container, .info-container {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.cart-heading {
+    margin-bottom: 30px;
+}
+
+.cart-heading p, .cart-category, .notfound-code {
+    color: rgb(255, 187, 0);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cart-heading h1, .notfound-container h1, .info-container h1 {
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+    align-items: start;
+}
+
+.cart-items {
+    display: grid;
+    gap: 16px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 90px 1fr auto auto auto;
+    gap: 18px;
+    align-items: center;
+    background-color: rgba(15, 15, 15, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.cart-img-holder {
+    height: 90px;
+    width: 90px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cart-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cart-item-info h2 {
+    font-size: 17px;
+    margin: 2px 0 8px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.remove-btn, .checkout-btn, .clear-btn, .cart-link {
+    border-radius: 50px;
+    padding: 4px 14px;
+    font-weight: 600;
+    transition: all 0.25s ease-in-out;
+}
+
+.quantity-controls button {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    min-height: 54px;
+    border-radius: 50%;
+    padding: 0;
+    font-weight: 600;
+    transition: all 0.25s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-btn, .clear-btn, .cart-link {
+    border-radius: 50px;
+    padding: 4px 14px;
+    font-weight: 600;
+    transition: all 0.25s ease-in-out;
+}
+
+.quantity-controls button, .checkout-btn, .cart-link {
+    background-color: rgb(255, 187, 0);
+    color: rgb(15, 15, 15);
+}
+
+.quantity-controls button:hover, .checkout-btn:hover, .cart-link:hover {
+    background-color: #fff;
+}
+
+.remove-btn, .clear-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.remove-btn:hover, .clear-btn:hover {
+    border-color: rgb(255, 187, 0);
+    color: rgb(255, 187, 0);
+}
+
+.item-total {
+    font-weight: 700;
+    color: rgb(255, 187, 0);
+}
+
+.cart-summary, .empty-cart {
+    background-color: rgba(15, 15, 15, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.cart-summary h2, .empty-cart h2 {
+    margin-bottom: 18px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.total-row {
+    color: rgb(255, 187, 0);
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: none;
+}
+
+.cart-summary label {
+    display: block;
+    margin: 22px 0 8px;
+}
+
+.cart-summary select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-color: rgb(35, 35, 35);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.checkout-btn, .clear-btn {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.order-message {
+    margin-top: 16px;
+    color: rgb(255, 187, 0);
+}
+
+.empty-cart {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.empty-cart p {
+    margin-bottom: 22px;
+}
+
+.cart-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/***** Not Found and Simple Header Pages *****/
+.notfound-container, .info-container {
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    align-content: center;
+    gap: 14px;
+}
+
+.notfound-code {
+    font-size: 96px;
+    line-height: 1;
+}
+
+.notfound-container p:not(.notfound-code), .info-container p:not(.cart-category) {
+    max-width: 560px;
+    color: rgb(210, 210, 210);
+}

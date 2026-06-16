@@ -11,16 +11,16 @@ function Header() {
                 <nav>
                     <ul className="nav flex">
                         <li><NavLink to='/' className=''>Home</NavLink></li>
-                        <li><NavLink to='/a' className=''>About</NavLink></li>
-                        <li><NavLink to='/c' className=''>Contact</NavLink></li>
+                        <li><NavLink to='/about' className=''>About</NavLink></li>
+                        <li><NavLink to='/contact' className=''>Contact</NavLink></li>
                     </ul>
                 </nav>
                 <h2>Veltra</h2>
                 <nav>
                     <ul className="nav flex right">
                         <li><NavLink to='/cart' className=''><Cart/></NavLink></li>
-                        <li><NavLink to='/u' className=''><User/></NavLink></li>
-                        <li><NavLink to='/s' className=''><Settings/></NavLink></li>
+                        <li><NavLink to='/account' className=''><User/></NavLink></li>
+                        <li><NavLink to='/settings' className=''><Settings/></NavLink></li>
                     </ul>
                 </nav>
             </div>

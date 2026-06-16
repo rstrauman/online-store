@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { addItemToCart } from '../utils/cartStorage';
 
 function ProductCard(props) {
     return (
@@ -11,7 +12,7 @@ function ProductCard(props) {
                 <p>{props.category}</p>
                 <p>${props.price}</p>
                 <button><Link to={`/product/${props.id}`}>Details</Link></button>
-                <button>Add to Cart</button>
+                <button onClick={() => addItemToCart(props)}>Add to Cart</button>
             </div>
         </div>
     );
