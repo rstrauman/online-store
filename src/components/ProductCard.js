@@ -10,8 +10,8 @@ function ProductCard(props) {
                 <h2>{props.title}</h2>
                 <p>{props.category}</p>
                 <p>${props.price}</p>
-                <button><Link to={`/product/${props.id}`}>💡</Link></button>
-                <button onClick="">🛒</button>
+                <button><Link to={`/product/${props.id}`}>Details</Link></button>
+                <button onClick="">Add to Cart</button>
             </div>
         </div>
     );
