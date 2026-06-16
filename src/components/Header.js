@@ -1,15 +1,30 @@
+import { HiOutlineShoppingCart as Cart } from "react-icons/hi";
+import { HiOutlineCog as Settings} from "react-icons/hi";
+import { HiOutlineUser as User } from "react-icons/hi";
+import { NavLink } from 'react-router-dom';
+
+
 function Header() {
     return (
         <header>
-            <div className="container flex">
-                <h2>Veltra</h2>
+            <div className="container header flex">
                 <nav>
-                    <ul>
-                        <li></li>
+                    <ul className="nav flex">
+                        <li><NavLink to='/' className=''>Home</NavLink></li>
+                        <li><NavLink to='/a' className=''>About</NavLink></li>
+                        <li><NavLink to='/c' className=''>Contact</NavLink></li>
                     </ul>
                 </nav>
-                <button>hello</button>
+                <h2>Veltra</h2>
+                <nav>
+                    <ul className="nav flex right">
+                        <li><NavLink to='/cart' className=''><Cart/></NavLink></li>
+                        <li><NavLink to='/u' className=''><User/></NavLink></li>
+                        <li><NavLink to='/s' className=''><Settings/></NavLink></li>
+                    </ul>
+                </nav>
             </div>
+            {/* <button>hello</button> */}
         </header>
     );
 }
