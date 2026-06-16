@@ -28,14 +28,8 @@ function Home() {
     );
     return (
         <main>
-            <input
-                    type="text"
-                    placeholder="Type item Name"
-                    value={query}
-                    onChange={event => setQuery(event.target.value)}
-                />
+            <HeroBanner query={query} setQuery={setQuery}/>
             <Gallery products={selectproducts} />
-            <HeroBanner/>
         </main>
     );
 }
