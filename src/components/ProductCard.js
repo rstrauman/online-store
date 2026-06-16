@@ -11,7 +11,7 @@ function ProductCard(props) {
                 <p>{props.category}</p>
                 <p>${props.price}</p>
                 <button><Link to={`/product/${props.id}`}>Details</Link></button>
-                <button onClick="">Add to Cart</button>
+                <button>Add to Cart</button>
             </div>
         </div>
     );

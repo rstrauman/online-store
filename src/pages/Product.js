@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Product() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const [similarProducts, setSimilarProducts] = useState([]);
 
     const [product, setProduct] = useState(null);
     const url = 'https://fakestoreapi.com/products';
@@ -29,10 +31,28 @@ function Product() {
         }
     }, [id, navigate]);
 
+    useEffect(() => {
+    const fetchSimilarProducts = async () => {
+        try {
+            if (!product) return;
+
+            const response = await axios.get(`${url}/category/${product.category}`);
+
+            const filteredProducts = response.data
+                .filter(item => item.id !== product.id)
+                .slice(0, 4);
+
+            setSimilarProducts(filteredProducts);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+    fetchSimilarProducts();
+}, [product]);
+
     return (
         <section>
             <h2>Product Detail</h2>
-
             <div>
                 {product && (
                     <aside>
@@ -48,11 +68,24 @@ function Product() {
                             <p className='raterate'>Rate: {product.rating.rate}</p>
 
                             <div className='pricetag'>
-                                <button className='pricebtn'>${product.price}</button>
+                                <p>${product.price}</p>
+                                <button className='cartbtn'>Add to Cart</button>
                             </div>
                         </div>
                     </aside>
                 )}
+            </div>
+            <h2>Similiar Items</h2>
+            <div className='similaritems'>
+                {similarProducts.map(item => (
+                    <Link to={`/product/${item.id}`} key={item.id}>
+                        <div className='similarcard'>
+                            <img src={item.image} alt={item.title} />
+                            <h2>{item.title}</h2>
+                            <p>${item.price}</p>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </section>
     );
