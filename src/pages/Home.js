@@ -27,6 +27,12 @@ function Home() {
     );
     return (
         <>
+        <input
+                type="text"
+                placeholder="Type item Name"
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+            />
          <Gallery products={selectproducts} />
         </>
     );
