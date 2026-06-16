@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { addItemToCart } from '../utils/cartStorage';
 
 function Product() {
     const { id } = useParams();
@@ -69,7 +70,7 @@ function Product() {
 
                             <div className='pricetag'>
                                 <p>${product.price}</p>
-                                <button className='cartbtn'>Add to Cart</button>
+                                <button className='cartbtn' onClick={() => addItemToCart(product)}>Add to Cart</button>
                             </div>
                         </div>
                     </aside>
