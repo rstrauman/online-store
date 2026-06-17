@@ -11,6 +11,7 @@ function Home() {
     const [sortOrder, setSortOrder] = useState('');
 
     const productRef = useRef(null);
+    const topRatedRef = useRef(null);
 
     const url = 'https://fakestoreapi.com/products';
 
@@ -33,10 +34,16 @@ function Home() {
         const matchesCategory = category === '' || product.category === category;
 
         return matchesSearch && matchesCategory;
-}   );
+    });
 
+    const sortedProducts = [...selectproducts];
+    
     if (sortOrder === 'low-high') selectproducts.sort((a, b) => a.price - b.price);
     if (sortOrder === 'high-low') selectproducts.sort((a, b) => b.price - a.price);
+
+    const topRated = [...products]
+        .sort((a, b ) => (b.rating?.rate || 0) - (a.rating?.rate || 0))
+        .slice(0, 3);
 
     return (
         <main>
@@ -64,7 +71,12 @@ function Home() {
                     </select>
                 </div>
                 <Gallery products={selectproducts} />
-                <SecondaryBanner/>
+                <div ref={topRatedRef}>
+                    <SecondaryBanner topRatedRef={topRatedRef}/>
+                    {topRated.length > 0 && (
+                        <Gallery products={topRated}/>
+                    )};
+                </div>
             </div>
         </main>
     );

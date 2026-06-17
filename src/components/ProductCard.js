@@ -3,7 +3,6 @@ import { addItemToCart } from '../utils/cartStorage';
 import { motion } from 'framer-motion';
 
 function ProductCard(props) {
-
     const cardVariants = {
         hidden: { 
             opacity: 0, 
