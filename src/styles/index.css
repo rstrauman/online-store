@@ -10,7 +10,7 @@ main {
 }
 
 /***** Flex *****/
-.flex, .nav.flex, .hero-content, .product-card, .info-holder, .catalog-controls {
+.flex, .nav.flex, .hero-content, .product-card, .info-holder, .catalog-controls, .banner-content {
     display: flex;
 }
 
@@ -38,6 +38,7 @@ header h2, .catalog-heading {
     letter-spacing: 2px;
     line-height: 1;
     transform: translateY(2px);
+    text-shadow: 4px 4px 8px black;
 }
 
 .container.header.flex nav {
@@ -101,6 +102,7 @@ a.active {
     background: url(../media/street.jpg) center / cover no-repeat;
     height: calc(100svh - 60px);
     position: relative;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.33);
 }
 
 .overlay {
@@ -139,7 +141,7 @@ input[type=text]:focus {
     border-color: #fff;
 }
 
-.hero-content button, .details-btn {
+.hero-content button, .details-btn, .banner button {
     background-color: rgb(140, 140, 140);
     color: #ffffff;
     border-radius: 5px;
@@ -150,7 +152,7 @@ input[type=text]:focus {
     transition: all 0.25s ease-in-out;
 }
 
-.hero-content button:hover, .details-btn:hover {
+.hero-content button:hover, .details-btn:hover, .banner button:hover {
     background-color: rgb(255, 187, 0);
 }
 
@@ -524,6 +526,31 @@ input[type=text]:focus {
 .cart-link {
     display: inline-block;
     text-decoration: none;
+}
+
+/***** Secondary Banner *****/
+.banner {
+    background: url(../media/cybuh.jpg) center / cover no-repeat; 
+    height: 40svh;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.33);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.33);
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.banner-content {
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+    place-items: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.banner-content h2 {
+
 }
 
 /***** Not Found *****/

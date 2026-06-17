@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Gallery from '../components/Gallery';
 import HeroBanner from '../components/HeroBanner'
+import SecondaryBanner from '../components/SecondaryBanner';
 
 function Home() {
     const [products, setProducts] = useState([]);
@@ -63,6 +64,7 @@ function Home() {
                     </select>
                 </div>
                 <Gallery products={selectproducts} />
+                <SecondaryBanner/>
             </div>
         </main>
     );
