@@ -5,6 +5,10 @@ body {
     background: linear-gradient(180deg, rgb(15, 15, 15), rgb(50, 50, 50), rgb(15, 15, 15 ));
 }
 
+main {
+    padding-bottom: 10px; 
+}
+
 /***** Flex *****/
 .flex, .nav.flex, .hero-content, .product-card, .info-holder, .catalog-controls {
     display: flex;
@@ -540,4 +544,56 @@ input[type=text]:focus {
 .notfound-container p:not(.notfound-code), .info-container p:not(.cart-category) {
     max-width: 560px;
     color: rgb(210, 210, 210);
+}
+
+/***** Footer *****/
+footer {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(15, 15, 15), rgb(50, 50, 50), rgb(15, 15, 15 ));
+    color: rgb(255, 255, 255);
+}
+
+.footer {
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.flex.top {
+    justify-content: space-evenly;
+    place-items: center;
+    text-align: center;
+}
+
+.footer, .flex.row {
+    flex-direction: column;
+}
+
+footer p {
+    cursor: pointer;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.flex.bottom {
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flex.bottom h3 {
+    font-family: "Parisienne", serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 1;
+    transform: translateY(2px);
 }
