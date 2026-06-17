@@ -24,7 +24,6 @@ function Header() {
                     </ul>
                 </nav>
             </div>
-            {/* <button>hello</button> */}
         </header>
     );
 }
