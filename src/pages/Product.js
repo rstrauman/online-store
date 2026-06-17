@@ -52,41 +52,66 @@ function Product() {
 }, [product]);
 
     return (
-        <section>
-            <h2>Product Detail</h2>
-            <div>
+        <section className="product-page">
+            <div className="container">
                 {product && (
-                    <aside>
-                        <div className='imgholder'>
-                            <img src={product.image} alt={product.title} />
-                        </div>
+                    <>
+                        <div className="product-detail-container">
+                            <p className="product-detail-label">Veltra Product Detail</p>
 
-                        <div className='infoholder'>
-                            <h1>{product.title}</h1>
-                            <p>Category: {product.category}</p>
-                            <p>Description: {product.description}</p>
-                            <p className='ratecount'>Count: {product.rating.count}</p>
-                            <p className='raterate'>Rate: {product.rating.rate}</p>
+                            <div className="product-detail-card">
+                                <div className="product-detail-img-holder">
+                                    <img src={product.image} alt={product.title} />
+                                </div>
 
-                            <div className='pricetag'>
-                                <p>${product.price}</p>
-                                <button className='cartbtn' onClick={() => addItemToCart(product)}>Add to Cart</button>
+                                <div className="product-detail-info">
+                                    <p className="product-detail-category">{product.category}</p>
+                                    <h1>{product.title}</h1>
+                                    <p className="product-detail-description">
+                                        {product.description}
+                                    </p>
+
+                                    <div className="product-stats">
+                                        <p>Rate: {product.rating.rate}</p>
+                                        <p>Count: {product.rating.count}</p>
+                                    </div>
+
+                                    <div className="product-action-row">
+                                        <p className="product-detail-price">${product.price}</p>
+                                        <button 
+                                            className="cart-btn" 
+                                            onClick={() => addItemToCart(product)}
+                                        >
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </aside>
-                )}
-            </div>
-            <h2>Similiar Items</h2>
-            <div className='similaritems'>
-                {similarProducts.map(item => (
-                    <Link to={`/product/${item.id}`} key={item.id}>
-                        <div className='similarcard'>
-                            <img src={item.image} alt={item.title} />
-                            <h2>{item.title}</h2>
-                            <p>${item.price}</p>
+
+                        <div className="similar-section">
+                            <h2>Similar Items</h2>
+
+                            <div className="similaritems">
+                                {similarProducts.map(item => (
+                                    <Link to={`/product/${item.id}`} key={item.id}>
+                                        <div className="similarcard">
+                                            <div className="similar-img-holder">
+                                                <img src={item.image} alt={item.title} />
+                                            </div>
+
+                                            <div className="similar-info">
+                                                <p>{item.category}</p>
+                                                <h3>{item.title}</h3>
+                                                <span>${item.price}</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                    </Link>
-                ))}
+                    </>
+                )}
             </div>
         </section>
     );
