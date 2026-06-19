@@ -10,7 +10,7 @@ main {
 }
 
 /***** Flex *****/
-.flex, .nav.flex, .hero-content, .product-card, .info-holder, .catalog-controls, .banner-content {
+.flex, .nav.flex, .hero-content, .product-card, .info-holder, .catalog-controls, .banner-content, .modal-overlay {
     display: flex;
 }
 
@@ -315,7 +315,7 @@ input[type=text]:focus {
     transform: scale(1.1);
 }
 
-.cart-btn {
+.cart-btn, .modal-content button {
     background-color: rgb(255, 187, 0);
     padding: 8px 12px;
     color: #ffffff;
@@ -327,7 +327,7 @@ input[type=text]:focus {
     transition: all 0.25s ease-in-out;
 }
 
-.cart-btn:hover {
+.cart-btn:hover, .modal-content button:hover {
     background-color: transparent;
     border: 2px solid rgb(140, 140, 140);
 }
@@ -1026,4 +1026,26 @@ footer a:hover {
 
 .activity-item p {
     color: rgb(220, 220, 220);
+}
+
+/***** Add to Cart Modal ******/
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.modal-content {
+    background: linear-gradient(90deg, rgb(50, 50, 50), rgb(15, 15, 15), rgb(50, 50, 50));
+    padding: 2rem;
+    border-radius: 12px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 5px;
 }

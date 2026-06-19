@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
 import { addItemToCart } from '../utils/cartStorage';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import Modal from './Modal';
 
 function ProductCard(props) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [addedProduct, setAddedProduct] = useState('');
+
+    const product = {
+        id: props.id,
+        title: props.title,
+        price: props.price,
+        image: props.image,
+        category: props.category
+    };
+
+    const handleAddToCart = (product) => {
+        addItemToCart(product);
+
+        setAddedProduct(product.title);
+        setIsModalOpen(true);
+    };
+
     const cardVariants = {
         hidden: { 
             opacity: 0, 
@@ -46,9 +66,10 @@ function ProductCard(props) {
                 </div>
                 <div className='flex product-btns'>
                     <button className='details-btn'><Link to={`/product/${props.id}`}>Details</Link></button>
-                    <button className='cart-btn' onClick={() => addItemToCart(props)}>Add to Cart</button>
+                    <button className='cart-btn' onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 </div>
             </div>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} productName={addedProduct}/>
         </motion.div>
     );
 }
