@@ -1,7 +1,7 @@
 {
   "name": "online-store",
   "version": "0.1.0",
-  "homepage": "https://rstrauman/online-store.git",
+  "homepage": "https://rstrauman.github.io/online-store",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
