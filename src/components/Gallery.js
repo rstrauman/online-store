@@ -13,7 +13,7 @@ function Gallery(props) {
                         image={product.image}
                         title={product.title}
                         category={product.category}
-                    price={product.price}
+                        price={product.price}
                     />
                 ))}
             </AnimatePresence>
